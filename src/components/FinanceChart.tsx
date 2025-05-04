@@ -1,6 +1,4 @@
-export const dynamic = "force-dynamic";
-
-("use client");
+"use client";
 
 import Image from "next/image";
 import {
