@@ -10,6 +10,7 @@ import Image from "next/image";
 
 type AnnouncementList = Announcement & {
   class: Class;
+  relatedData: any;
 };
 
 const AnnouncementListPage = async ({
