@@ -5,7 +5,7 @@ import EventCalendarContainer from "@/components/EventCalendarContainer";
 import FinanceChart from "@/components/FinanceChart";
 import UserCard from "@/components/UserCard";
 
-const AdminPage = ({
+const AdminPage = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | undefined };
