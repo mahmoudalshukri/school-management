@@ -1,4 +1,4 @@
-import FormModal from "@/components/FormModal";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -107,13 +107,18 @@ const ParentListPage = async ({
             </Link>
             {role === "admin" && (
               <>
-                <FormModal
+                <FormContainer
                   table="parent"
                   type="update"
                   id={item.id}
                   data={item}
                 />
-                <FormModal table="parent" type="delete" id={item.id} />
+                <FormContainer
+                  data={""}
+                  table="parent"
+                  type="delete"
+                  id={item.id}
+                />
               </>
               // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
               //   <Image
@@ -153,7 +158,7 @@ const ParentListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
               // </button>
-              <FormModal table="parent" type="create" />
+              <FormContainer data={""} table="parent" type="create" />
             )}
           </div>
         </div>

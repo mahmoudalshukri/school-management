@@ -1,4 +1,4 @@
-import FormModal from "@/components/FormModal";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -93,7 +93,7 @@ const LessonListPage = async ({
         className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
         <td className="flex items-center gap-4 p-4">
           <div className="flex flex-col">
-            <h3 className="font-semibold">{item.subject.name}</h3>
+            <h3 className="font-semibold">{item.name}</h3>
           </div>
         </td>
         <td className="hidden md:table-cell">{item.class.name}</td>
@@ -117,13 +117,18 @@ const LessonListPage = async ({
               //   />
               // </button>
               <>
-                <FormModal
+                <FormContainer
                   table="lesson"
                   type="update"
                   id={item.id}
                   data={item}
                 />
-                <FormModal table="lesson" type="delete" id={item.id} />
+                <FormContainer
+                  data={""}
+                  table="lesson"
+                  type="delete"
+                  id={item.id}
+                />
               </>
             )}
           </div>
@@ -154,7 +159,7 @@ const LessonListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
               // </button>
-              <FormModal table="lesson" type="create" />
+              <FormContainer data={""} table="lesson" type="create" />
             )}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import FormModal from "@/components/FormModal";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -140,13 +140,18 @@ const AssignmentListPage = async ({
                 //   />
                 // </button>
                 <>
-                  <FormModal
+                  <FormContainer
                     table="assignment"
                     type="update"
                     id={item.id}
                     data={item}
                   />
-                  <FormModal table="assignment" type="delete" id={item.id} />
+                  <FormContainer
+                    table="assignment"
+                    type="delete"
+                    id={item.id}
+                    data={""}
+                  />
                 </>
               ))}
           </div>
@@ -211,7 +216,7 @@ const AssignmentListPage = async ({
                 // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
                 //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
                 // </button>
-                <FormModal table="assignment" type="create" />
+                <FormContainer data={""} table="assignment" type="create" />
               ))}
           </div>
         </div>

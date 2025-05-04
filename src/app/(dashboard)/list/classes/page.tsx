@@ -119,7 +119,12 @@ const ClassesListPage = async ({
                   id={item.id}
                   data={item}
                 />
-                <FormContainer table="class" type="delete" id={item.id} />
+                <FormContainer
+                  data={""}
+                  table="class"
+                  type="delete"
+                  id={item.id}
+                />
               </>
             )}
           </div>
@@ -150,7 +155,7 @@ const ClassesListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
               // </button>
-              <FormContainer table="class" type="create" />
+              <FormContainer data={""} table="class" type="create" />
             )}
           </div>
         </div>

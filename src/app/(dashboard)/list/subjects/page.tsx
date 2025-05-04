@@ -63,7 +63,12 @@ const renderRow = (item: SubjectList) => {
                 id={item.id}
                 data={item}
               />
-              <FormContainer table="subject" type="delete" id={item.id} />
+              <FormContainer
+                data={""}
+                table="subject"
+                type="delete"
+                id={item.id}
+              />
             </>
           )}
         </div>
@@ -134,7 +139,7 @@ const SubjectsListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
               // </button>
-              <FormContainer table="subject" type="create" />
+              <FormContainer data={""} table="subject" type="create" />
             )}
           </div>
         </div>

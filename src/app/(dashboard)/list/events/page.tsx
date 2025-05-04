@@ -1,4 +1,4 @@
-import FormModal from "@/components/FormModal";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -43,9 +43,9 @@ const EventListPage = async ({
 
   // Role condations
   const roleConditions = {
-    teacher: { lessons: { some: { teacherId: userId } } },
-    student: { students: { some: { id: userId } } },
-    parent: { students: { some: { parentId: userId } } },
+    teacher: { lessons: { some: { teacherId: userId! } } },
+    student: { students: { some: { id: userId! } } },
+    parent: { students: { some: { parentId: userId! } } },
   };
 
   query.OR = [
@@ -147,13 +147,18 @@ const EventListPage = async ({
               //   />
               // </button>
               <>
-                <FormModal
+                <FormContainer
                   table="event"
                   type="update"
                   id={item.id}
                   data={item}
                 />
-                <FormModal table="event" type="delete" id={item.id} />
+                <FormContainer
+                  data={""}
+                  table="event"
+                  type="delete"
+                  id={item.id}
+                />
               </>
             )}
           </div>
@@ -185,7 +190,7 @@ const EventListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
               // </button>
-              <FormModal table="event" type="create" />
+              <FormContainer data={""} table="event" type="create" />
             )}
           </div>
         </div>

@@ -171,7 +171,12 @@ const ExamListPage = async ({
                     id={item.id}
                     data={item}
                   />
-                  <FormContainer table="exam" type="delete" id={item.id} />
+                  <FormContainer
+                    data={""}
+                    table="exam"
+                    type="delete"
+                    id={item.id}
+                  />
                 </>
               ))}
           </div>
@@ -195,7 +200,7 @@ const ExamListPage = async ({
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {(role === "admin" || role === "teacher") && (
-              <FormContainer table="exam" type="create" />
+              <FormContainer data={""} table="exam" type="create" />
             )}
           </div>
         </div>
