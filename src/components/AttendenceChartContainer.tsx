@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import Image from "next/image";
 import AttendenceChart from "./AttendenceChart";
 import prisma from "@/lib/prisma";
