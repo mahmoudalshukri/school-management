@@ -13,7 +13,7 @@ export type FormContainerProps = {
     | "exam"
     | "assignment"
     | "result"
-    | "attendence"
+    | "attendance"
     | "event"
     | "announcement";
   type: "create" | "update" | "delete";
