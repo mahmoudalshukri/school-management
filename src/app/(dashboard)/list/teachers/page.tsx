@@ -142,7 +142,12 @@ const TeacherListPage = async ({
               //     height={16}
               //   />
               // </button>
-              <FormContainer table="teacher" type="delete" id={item.id} />
+              <FormContainer
+                data={""}
+                table="teacher"
+                type="delete"
+                id={item.id}
+              />
             )}
           </div>
         </td>
@@ -172,7 +177,7 @@ const TeacherListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               //   <Image src="/plus.png" alt="plus icon" width={14} height={14} />
               // </button>
-              <FormContainer table="teacher" type="create" />
+              <FormContainer data={""} table="teacher" type="create" />
             )}
           </div>
         </div>
